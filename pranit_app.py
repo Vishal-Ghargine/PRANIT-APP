@@ -23,10 +23,7 @@ uploaded_file = st.file_uploader("📁 Upload your car.csv file", type=['csv'])
 
 @st.cache_data
 def load_data():
-    url = "https://archive.ics.uci.edu/ml/machine-learning-databases/car/car.data"
-    columns = ['buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety', 'class']
-    return pd.read_csv(url, names=columns)
-
+    return pd.read_csv("car.data", names=columns)
 df = load_data()
 
 
